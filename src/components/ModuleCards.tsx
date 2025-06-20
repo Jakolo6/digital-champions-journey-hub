@@ -9,69 +9,47 @@ export const ModuleCards = () => {
   const modules = [
     {
       id: 1,
-      title: "Digital Fundamentals",
-      description: "Build your foundation in digital transformation and supply chain innovation",
-      duration: "2 hours",
+      title: "FUTURE EXPLORER",
+      description: "Discover the Future: An Introduction to Digital Transformation and Essential Soft Skills to Prepare for Change",
+      duration: "3 hours",
       participants: 1247,
       progress: 100,
-      credits: 15,
+      credits: 25,
       status: "completed",
       level: "Essential"
     },
     {
       id: 2,
-      title: "Data Analytics Mastery",
-      description: "Learn to harness data for strategic decision-making and operational excellence",
-      duration: "3 hours",
+      title: "DIGITAL & AI ENABLER",
+      description: "Mastering Technology: Integrating modern technologies to drive change and scale solutions",
+      duration: "4 hours",
       participants: 892,
       progress: 100,
-      credits: 20,
+      credits: 30,
       status: "completed",
       level: "Essential"
     },
     {
       id: 3,
-      title: "Process Optimization",
-      description: "Streamline operations using digital tools and methodologies",
-      duration: "2.5 hours",
+      title: "INNOVATION PILOT",
+      description: "Putting Visions into Action: Agile methods and innovation approaches to actively shape digital transformation",
+      duration: "3.5 hours",
       participants: 756,
       progress: 60,
-      credits: 25,
+      credits: 35,
       status: "current",
-      level: "Essential"
+      level: "Deep Dive"
     },
     {
       id: 4,
-      title: "AI & Automation",
-      description: "Explore artificial intelligence applications in supply chain management",
-      duration: "4 hours",
+      title: "LOGISTICS LEADER",
+      description: "Revolutionizing Digital Logistics: Leveraging innovative technologies to optimize processes and position Arvato as a pioneer",
+      duration: "4.5 hours",
       participants: 543,
-      progress: 0,
-      credits: 30,
-      status: "locked",
-      level: "Deep Dive"
-    },
-    {
-      id: 5,
-      title: "Sustainability Technology",
-      description: "Green technologies and sustainable practices for modern supply chains",
-      duration: "3 hours",
-      participants: 421,
-      progress: 0,
-      credits: 25,
-      status: "locked",
-      level: "Deep Dive"
-    },
-    {
-      id: 6,
-      title: "Future Explorer",
-      description: "Cutting-edge innovations and emerging trends shaping the industry",
-      duration: "5 hours",
-      participants: 234,
       progress: 0,
       credits: 40,
       status: "locked",
-      level: "Bonus"
+      level: "Deep Dive"
     }
   ];
 
@@ -83,11 +61,11 @@ export const ModuleCards = () => {
             Core Learning Modules
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Progress through six comprehensive modules designed to transform your digital expertise.
+            Progress through four comprehensive modules designed to transform your digital expertise.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {modules.map((module) => (
             <Card 
               key={module.id} 
@@ -101,9 +79,7 @@ export const ModuleCards = () => {
                     className={`${
                       module.level === 'Essential' 
                         ? 'bg-blue-100 text-blue-800'
-                        : module.level === 'Deep Dive'
-                        ? 'bg-orange-100 text-orange-800'
-                        : 'bg-purple-100 text-purple-800'
+                        : 'bg-orange-100 text-orange-800'
                     }`}
                   >
                     {module.level}
