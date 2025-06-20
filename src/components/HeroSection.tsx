@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, ArrowRight, Star } from "lucide-react";
@@ -56,10 +55,17 @@ export const HeroSection = () => {
           
           <div className="relative">
             <div className="relative bg-white rounded-2xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-300">
-              <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center">
-                <Play className="h-16 w-16 text-white" />
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full rounded-xl"
+                  src="https://share.synthesia.io/embeds/videos/ffc943d2-e58b-4c54-8a83-f57a8b7149ab"
+                  title="Digital Champions Program Welcome Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Welcome to Digital Champions</h3>
+              <h3 className="font-semibold text-gray-900 mt-4 mb-2">Welcome to Digital Champions</h3>
               <p className="text-gray-600 text-sm">Start your learning journey today</p>
             </div>
             
