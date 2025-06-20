@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, MapPin, Phone, Linkedin, Twitter } from "lucide-react";
@@ -10,12 +11,12 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
+            <Link to="/" className="flex items-center mb-4">
               <div className="h-8 w-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-sm">DC</span>
               </div>
               <span className="text-xl font-bold">Digital Champions Program</span>
-            </div>
+            </Link>
             <p className="text-gray-300 mb-4 max-w-md">
               Empowering Arvato Supply Chain Solutions employees with cutting-edge digital skills and transformative learning experiences.
             </p>
@@ -35,11 +36,11 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#journey" className="hover:text-blue-400 transition-colors">Journey Map</a></li>
-              <li><a href="#modules" className="hover:text-blue-400 transition-colors">Learning Modules</a></li>
-              <li><a href="#community" className="hover:text-blue-400 transition-colors">Community</a></li>
-              <li><a href="#cases" className="hover:text-blue-400 transition-colors">Use Cases</a></li>
-              <li><a href="#profile" className="hover:text-blue-400 transition-colors">My Profile</a></li>
+              <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
+              <li><Link to="/dashboard" className="hover:text-blue-400 transition-colors">Dashboard</Link></li>
+              <li><Link to="/community" className="hover:text-blue-400 transition-colors">Community</Link></li>
+              <li><Link to="/login" className="hover:text-blue-400 transition-colors">Sign In</Link></li>
+              <li><Link to="/register" className="hover:text-blue-400 transition-colors">Sign Up</Link></li>
             </ul>
           </div>
 
