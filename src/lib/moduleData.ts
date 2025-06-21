@@ -1,3 +1,4 @@
+
 export interface Session {
   id: string;
   title: string;
@@ -9,12 +10,18 @@ export interface Session {
   sessionRecordingUrl?: string;
 }
 
+export interface SelfLearningItem {
+  title: string;
+  url: string;
+  completed: boolean;
+}
+
 export interface Module {
   id: string;
   title: string;
   description: string;
   sessions: Session[];
-  courseraLinks?: { title: string; url: string; }[];
+  selfLearningItems?: SelfLearningItem[];
 }
 
 export const modules: Module[] = [
@@ -22,9 +29,9 @@ export const modules: Module[] = [
     id: '1',
     title: 'Digital Mind',
     description: 'Laying the foundation for a digital-first mindset and collaborative success.',
-    courseraLinks: [
-      { title: 'Coursera: Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn' },
-      { title: 'Coursera: Mindshift', url: 'https://www.coursera.org/learn/mindshift' }
+    selfLearningItems: [
+      { title: 'Coursera: Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn', completed: false },
+      { title: 'Coursera: Mindshift', url: 'https://www.coursera.org/learn/mindshift', completed: true }
     ],
     sessions: [
       { 
@@ -64,9 +71,9 @@ export const modules: Module[] = [
     id: '2',
     title: 'IT Excellence',
     description: 'Harnessing the power of data, AI, and automation to drive efficiency and innovation.',
-    courseraLinks: [
-      { title: 'Coursera: Introduction to Data Science', url: 'https://www.coursera.org/learn/data-science-course' },
-      { title: 'Coursera: Machine Learning for Everyone', url: 'https://www.coursera.org/learn/machine-learning-for-everyone' }
+    selfLearningItems: [
+      { title: 'Coursera: Introduction to Data Science', url: 'https://www.coursera.org/learn/data-science-course', completed: true },
+      { title: 'Coursera: Machine Learning for Everyone', url: 'https://www.coursera.org/learn/machine-learning-for-everyone', completed: false }
     ],
     sessions: [
       { 
@@ -99,6 +106,10 @@ export const modules: Module[] = [
     id: '3',
     title: 'Digital Acceleration',
     description: 'From customer needs to tangible solutions, master the art of digital project execution.',
+    selfLearningItems: [
+      { title: 'Design Thinking Fundamentals', url: 'https://example.com/design-thinking', completed: false },
+      { title: 'Agile Project Management', url: 'https://example.com/agile-pm', completed: false }
+    ],
     sessions: [
       { id: '3.E1', title: 'Empowering Excellence: Mastering Customer Centricity Together', type: 'Essential', format: 'Modulhandbuch', speakers: ['Julia Börs', 'Axel Meyer'], description: 'Understand how to focus on the customer, with guest stories and Arvato\'s approach to customer centricity.' },
       { id: '3.E2', title: 'Innovate with Impact: The Power of Storytelling', type: 'Essential', format: 'Workshop', speakers: ['Nunatak', 'Martin Mühl', 'Ricardo Dittmer'], description: 'Learn how to tell a story with your ideas and live innovation beyond boundaries.' },
@@ -112,6 +123,10 @@ export const modules: Module[] = [
     id: '4',
     title: 'Future Warehouse',
     description: 'Exploring the technology, automation, and sustainable practices shaping the future of logistics.',
+    selfLearningItems: [
+      { title: 'Robotics in Logistics', url: 'https://example.com/robotics-logistics', completed: false },
+      { title: 'Sustainable Supply Chain', url: 'https://example.com/sustainable-supply', completed: false }
+    ],
     sessions: [
       { id: '4.E1', title: 'Logistics in action: From theory to reality', type: 'Essential', format: 'Modulhandbuch', speakers: ['Uni Münster', 'Maurijn Hellenthal'], description: 'Learn warehousing theory and see it in practice with a virtual tour of an Arvato site.' },
       { id: '4.E2', title: 'Future Warehouse: Transforming logistics for tomorrow', type: 'Essential', format: 'Lecture', speakers: ['Thorsten Wiemann', 'Bernhard Lembeck'], description: 'Get to know Arvato\'s approach to future-proof logistics and join a panel discussion with internal experts.' },

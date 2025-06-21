@@ -1,18 +1,28 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Trophy, BookOpen, Badge } from "lucide-react";
+import { Trophy, BookOpen, CheckSquare } from "lucide-react";
 import { useAuth } from '@/context/AuthContext';
+import { modules } from '@/lib/moduleData';
 
 export const GamifiedProgress = () => {
   const { user } = useAuth();
+  
+  // Calculate self-learning progress
+  const totalSelfLearningItems = modules.reduce((total, module) => {
+    return total + (module.selfLearningItems?.length || 0);
+  }, 0);
+  
+  const completedSelfLearningItems = modules.reduce((total, module) => {
+    const completedInModule = module.selfLearningItems?.filter(item => item.completed).length || 0;
+    return total + completedInModule;
+  }, 0);
   
   // Mock/placeholder data for gamification
   const earnedCredits = user?.credits || 85;
   const totalCredits = 250;
   const completedModules = 2;
   const totalModules = 4;
-  const badgesEarned = 3;
   
   const overallProgress = Math.round((earnedCredits / totalCredits) * 100);
   
@@ -46,9 +56,9 @@ export const GamifiedProgress = () => {
               </div>
               
               <div className="text-center p-4 bg-white/60 rounded-lg backdrop-blur-sm">
-                <Badge className="h-8 w-8 text-orange-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-gray-900">{badgesEarned}</div>
-                <div className="text-sm text-gray-600">Badges Unlocked</div>
+                <CheckSquare className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">{completedSelfLearningItems} / {totalSelfLearningItems}</div>
+                <div className="text-sm text-gray-600">Resources Completed</div>
               </div>
             </div>
           </div>
