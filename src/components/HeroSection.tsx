@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -25,16 +26,13 @@ export const HeroSection = () => {
               earn badges, and become a Digital Champion through our interactive learning experience.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-                <Play className="h-5 w-5 mr-2" />
-                Start Your Journey
-              </Button>
-              
-              <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2">
-                Explore Modules
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
+            <div className="flex justify-center lg:justify-start">
+              <Link to="/learning-journey">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 border-2">
+                  Explore Learning Journey
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
             </div>
             
             <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-gray-600">
