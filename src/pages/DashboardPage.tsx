@@ -1,6 +1,5 @@
 
 import { Navigation } from "@/components/Navigation";
-import { JourneyMap } from "@/components/JourneyMap";
 import { ModuleCards } from "@/components/ModuleCards";
 import { Footer } from "@/components/Footer";
 import { useAuth } from '@/context/AuthContext';
@@ -23,7 +22,6 @@ export const DashboardPage = () => {
           </div>
         </div>
       </div>
-      <JourneyMap />
       <ModuleCards />
       <Footer />
     </div>
