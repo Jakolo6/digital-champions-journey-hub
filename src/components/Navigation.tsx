@@ -16,7 +16,7 @@ export const Navigation = () => {
   ];
 
   const publicMenuItems = [
-    { name: "Features", icon: BookOpen, href: "#features" },
+    { name: "Learning Journey", icon: BookOpen, href: "/learning-journey" },
     { name: "About", icon: Users, href: "#about" },
   ];
 

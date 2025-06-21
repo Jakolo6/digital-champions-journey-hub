@@ -13,6 +13,7 @@ import DashboardPage from "./pages/DashboardPage";
 import CommunityPage from "./pages/CommunityPage";
 import ModuleDetailPage from "./pages/ModuleDetailPage";
 import ModulesJourneyPage from "./pages/ModulesJourneyPage";
+import LearningJourneyPage from "./pages/LearningJourneyPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/learning-journey" element={<ModulesJourneyPage />} />
+            <Route path="/learning-journey" element={<LearningJourneyPage />} />
             
             {/* Protected Routes */}
             <Route path="/dashboard" element={
