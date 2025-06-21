@@ -1,5 +1,6 @@
 
 import { Navigation } from "@/components/Navigation";
+import { GamifiedProgress } from "@/components/GamifiedProgress";
 import { ModuleCards } from "@/components/ModuleCards";
 import { Footer } from "@/components/Footer";
 import { useAuth } from '@/context/AuthContext';
@@ -19,6 +20,11 @@ export const DashboardPage = () => {
             <p className="text-gray-600">
               Continue your digital transformation journey
             </p>
+          </div>
+          
+          {/* Add the GamifiedProgress component */}
+          <div className="mb-8">
+            <GamifiedProgress />
           </div>
         </div>
       </div>
