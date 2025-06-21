@@ -138,7 +138,7 @@ const ModuleDetailPage = () => {
                           )}
                         </div>
                         <span className="text-xs text-center text-gray-600 max-w-20 leading-tight truncate">
-                          {session.title}
+                          {session.shortTitle}
                         </span>
                         
                         {/* Connection Line */}
