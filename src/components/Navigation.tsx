@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, User, Trophy, Map, BookOpen, Users, LogOut } from "lucide-react";
+import { Menu, X, User, BookOpen, Users, LogOut } from "lucide-react";
 import { useAuth } from '@/context/AuthContext';
 
 export const Navigation = () => {
@@ -11,10 +11,8 @@ export const Navigation = () => {
   const { isAuthenticated, user, logout } = useAuth();
 
   const authenticatedMenuItems = [
-    { name: "Dashboard", icon: Map, href: "/dashboard" },
-    { name: "My Stations", icon: BookOpen, href: "/dashboard" },
+    { name: "Dashboard", icon: BookOpen, href: "/dashboard" },
     { name: "Community", icon: Users, href: "/community" },
-    { name: "Profile & Badges", icon: Trophy, href: "/dashboard" },
   ];
 
   const publicMenuItems = [

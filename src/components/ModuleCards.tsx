@@ -1,6 +1,5 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Clock, Users, Trophy, Play } from "lucide-react";
@@ -19,7 +18,6 @@ export const ModuleCards = () => {
       progress: 100,
       credits: 25,
       status: "completed",
-      level: "Essential",
       moduleData: modules.find(m => m.id === "1")
     },
     {
@@ -31,7 +29,6 @@ export const ModuleCards = () => {
       progress: 100,
       credits: 30,
       status: "completed",
-      level: "Essential",
       moduleData: modules.find(m => m.id === "2")
     },
     {
@@ -43,7 +40,6 @@ export const ModuleCards = () => {
       progress: 60,
       credits: 35,
       status: "current",
-      level: "Deep Dive",
       moduleData: modules.find(m => m.id === "3")
     },
     {
@@ -55,7 +51,6 @@ export const ModuleCards = () => {
       progress: 0,
       credits: 40,
       status: "locked",
-      level: "Deep Dive",
       moduleData: modules.find(m => m.id === "4")
     }
   ];
@@ -82,16 +77,6 @@ export const ModuleCards = () => {
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-2">
-                    <Badge 
-                      className={`${
-                        module.level === 'Essential' 
-                          ? 'bg-blue-100 text-blue-800'
-                          : 'bg-orange-100 text-orange-800'
-                      }`}
-                    >
-                      {module.level}
-                    </Badge>
-                    
                     <div className="text-right">
                       <div className="flex items-center text-sm text-gray-600 mb-1">
                         <Trophy className="h-4 w-4 mr-1" />
