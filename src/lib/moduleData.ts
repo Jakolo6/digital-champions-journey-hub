@@ -1,4 +1,3 @@
-
 export interface Session {
   id: string;
   title: string;
@@ -9,6 +8,7 @@ export interface Session {
   description: string;
   nextLiveSessionDate?: string;
   sessionRecordingUrl?: string;
+  materials?: { title: string; url: string; }[];
 }
 
 export interface SelfLearningItem {
@@ -44,7 +44,11 @@ export const modules: Module[] = [
         speakers: ['Sven Oevermann', 'Lisa Brenner', 'Miriam Hartling'], 
         description: 'Focuses on Change Readiness, Learning Culture, and Continuous Learning.',
         nextLiveSessionDate: 'October 15, 2025',
-        sessionRecordingUrl: 'https://example.com/recording/1E1'
+        sessionRecordingUrl: 'https://example.com/recording/1E1',
+        materials: [
+          { title: 'Learning Mindset Presentation.pdf', url: 'https://example.com/materials/mindset.pdf' },
+          { title: 'Change Readiness Workbook.pdf', url: 'https://example.com/materials/workbook.pdf' }
+        ]
       },
       { 
         id: '1.E2', 
@@ -54,7 +58,10 @@ export const modules: Module[] = [
         format: 'Lecture', 
         speakers: ['Chris Graves'], 
         description: 'Covers virtual collaboration methods, conflict management, and intercultural competencies.',
-        sessionRecordingUrl: 'https://example.com/recording/1E2'
+        sessionRecordingUrl: 'https://example.com/recording/1E2',
+        materials: [
+          { title: 'Collaboration Tools Guide.pdf', url: 'https://example.com/materials/collab.pdf' }
+        ]
       },
       { 
         id: '1.D1', 
@@ -113,7 +120,11 @@ export const modules: Module[] = [
         speakers: ['Daniel Böske'], 
         description: 'Learn why a data-driven mindset is important and realize the benefits of data.',
         nextLiveSessionDate: 'December 1, 2025',
-        sessionRecordingUrl: 'https://example.com/recording/2E1'
+        sessionRecordingUrl: 'https://example.com/recording/2E1',
+        materials: [
+          { title: 'Data Analytics Primer.pdf', url: 'https://example.com/materials/data-primer.pdf' },
+          { title: 'Data Visualization Templates.xlsx', url: 'https://example.com/materials/templates.xlsx' }
+        ]
       },
       { 
         id: '2.E2', 
