@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Menu, X, User, BookOpen, Users, LogOut } from "lucide-react";
@@ -9,9 +9,9 @@ import { useAuth } from '@/context/AuthContext';
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const authenticatedMenuItems = [
-    { name: "Dashboard", icon: BookOpen, href: "/dashboard" },
     { name: "Community", icon: Users, href: "/community" },
   ];
 
@@ -25,6 +25,10 @@ export const Navigation = () => {
   const handleLogout = () => {
     logout();
     setIsMenuOpen(false);
+  };
+
+  const handleProfileClick = () => {
+    navigate('/dashboard');
   };
 
   return (
@@ -67,7 +71,11 @@ export const Navigation = () => {
                   <LogOut className="h-4 w-4 mr-2" />
                   Logout
                 </Button>
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <Button 
+                  size="sm" 
+                  className="bg-blue-600 hover:bg-blue-700"
+                  onClick={handleProfileClick}
+                >
                   <User className="h-4 w-4 mr-2" />
                   {user?.name || 'Profile'}
                 </Button>
