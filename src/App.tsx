@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import CommunityPage from "./pages/CommunityPage";
+import ModuleDetailPage from "./pages/ModuleDetailPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,11 @@ const App = () => (
             <Route path="/community" element={
               <ProtectedRoute>
                 <CommunityPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/modules/:moduleId" element={
+              <ProtectedRoute>
+                <ModuleDetailPage />
               </ProtectedRoute>
             } />
             
