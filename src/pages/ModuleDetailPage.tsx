@@ -79,53 +79,39 @@ const ModuleDetailPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Futuristic animated background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-600/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0">
-          {/* Animated stars */}
-          <div className="absolute top-20 left-20 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-32 w-0.5 h-0.5 bg-blue-300 rounded-full animate-pulse delay-500"></div>
-          <div className="absolute top-60 left-1/3 w-0.5 h-0.5 bg-purple-300 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 right-20 w-1 h-1 bg-cyan-300 rounded-full animate-pulse delay-700"></div>
-        </div>
-      </div>
-      
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
       <Navigation />
       
       {/* Module Header */}
-      <div className="py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20 backdrop-blur-sm">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                 <IconComponent className="h-10 w-10 text-white" />
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full animate-pulse blur-md opacity-60"></div>
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent [text-shadow:_0_0_30px_rgb(147_51_234_/_50%)]">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               {module.title}
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {module.description}
             </p>
           </div>
 
           {/* Module Progress Section */}
-          <Card className="mb-8 bg-black/40 backdrop-blur-lg border border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-lg"></div>
-            <CardContent className="p-6 relative z-10">
+          <Card className="mb-8 shadow-lg">
+            <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-cyan-300 mb-2 [text-shadow:_0_0_20px_rgb(6_182_212_/_50%)]">Module Progress</h3>
-                <p className="text-gray-300">Progress: {completedSessions} of {totalSessions} sessions completed</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Module Progress</h3>
+                <p className="text-gray-600">Progress: {completedSessions} of {totalSessions} sessions completed</p>
               </div>
               
               <div className="mb-6">
-                <Progress value={progressPercentage} className="h-3 bg-gray-700/50" />
+                <Progress value={progressPercentage} className="h-3" />
                 <div className="flex justify-between items-center mt-2">
-                  <span className="text-sm font-medium text-gray-300">Overall Progress</span>
-                  <span className="text-sm font-medium text-cyan-400">{Math.round(progressPercentage)}%</span>
+                  <span className="text-sm font-medium text-gray-600">Overall Progress</span>
+                  <span className="text-sm font-medium text-blue-600">{Math.round(progressPercentage)}%</span>
                 </div>
               </div>
 
@@ -138,10 +124,10 @@ const ModuleDetailPage = () => {
                       <div key={session.id} className="flex flex-col items-center relative min-w-0 flex-1">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-all border-2 ${
                           status === 'completed' 
-                            ? 'bg-green-500 text-white border-green-400 shadow-lg shadow-green-500/50' 
+                            ? 'bg-green-500 text-white border-green-400 shadow-lg' 
                             : status === 'current'
-                            ? 'bg-cyan-500 text-white border-cyan-400 shadow-lg shadow-cyan-500/50'
-                            : 'bg-gray-700 text-gray-400 border-gray-600'
+                            ? 'bg-blue-500 text-white border-blue-400 shadow-lg'
+                            : 'bg-gray-200 text-gray-500 border-gray-300'
                         }`}>
                           {status === 'completed' ? (
                             <CheckCircle2 className="h-5 w-5" />
@@ -151,13 +137,13 @@ const ModuleDetailPage = () => {
                             <Circle className="h-5 w-5" />
                           )}
                         </div>
-                        <span className="text-xs text-center text-gray-300 max-w-20 leading-tight truncate">
+                        <span className="text-xs text-center text-gray-600 max-w-20 leading-tight truncate">
                           {session.title}
                         </span>
                         
-                        {/* Glowing Connection Line */}
+                        {/* Connection Line */}
                         {index < module.sessions.length - 1 && (
-                          <div className="absolute top-5 left-10 w-full h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 -z-10 animate-pulse" style={{
+                          <div className="absolute top-5 left-10 w-full h-0.5 bg-gray-300 -z-10" style={{
                             width: 'calc(100% - 2.5rem)'
                           }}></div>
                         )}
@@ -175,51 +161,48 @@ const ModuleDetailPage = () => {
             {essentialSessions.length > 0 && (
               <div>
                 <div className="flex items-center mb-6">
-                  <Badge className="bg-blue-500/20 text-blue-300 text-lg px-4 py-2 border border-blue-500/50 backdrop-blur-sm">
+                  <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2">
                     Essential Sessions
                   </Badge>
-                  <div className="flex-1 h-px bg-gradient-to-r from-blue-500/50 to-transparent ml-4"></div>
+                  <div className="flex-1 h-px bg-blue-200 ml-4"></div>
                 </div>
                 
                 <div className="space-y-4">
                   {essentialSessions.map((session, index) => (
-                    <Card key={session.id} className="hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 transform hover:-translate-y-2 bg-black/40 backdrop-blur-lg border border-white/10">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 blur-xl rounded-lg"></div>
-                      
-                      <CardHeader className="pb-4 relative z-10">
+                    <Card key={session.id} className="hover:shadow-lg transition-all duration-300 border border-gray-200">
+                      <CardHeader className="pb-4">
                         <div className="flex items-start gap-4">
                           <div className="flex flex-col items-center">
-                            <div className={`w-3 h-3 rounded-full shadow-lg ${getStatusColor(session.type)} shadow-blue-500/50`}></div>
+                            <div className={`w-3 h-3 rounded-full shadow-sm ${getStatusColor(session.type)}`}></div>
                             {index < essentialSessions.length - 1 && (
-                              <div className="w-px h-16 bg-gradient-to-b from-blue-500/50 to-transparent mt-2"></div>
+                              <div className="w-px h-16 bg-blue-200 mt-2"></div>
                             )}
                           </div>
                           
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
                               {getFormatIcon(session.format)}
-                              <Badge variant="outline" className="text-xs border-cyan-500/50 text-cyan-300">
+                              <Badge variant="outline" className="text-xs">
                                 {session.format}
                               </Badge>
                             </div>
                             
-                            <CardTitle className="text-lg mb-2 text-cyan-300">
+                            <CardTitle className="text-lg mb-2 text-gray-900">
                               {session.title}
                             </CardTitle>
                             
-                            <div className="text-sm text-gray-400 mb-2">
+                            <div className="text-sm text-gray-600 mb-2">
                               <strong>Speakers:</strong> {session.speakers.join(', ')}
                             </div>
                             
-                            <CardDescription className="mb-4 text-gray-300">
+                            <CardDescription className="mb-4 text-gray-700">
                               {session.description}
                             </CardDescription>
 
                             {/* Session Actions */}
                             <div className="flex flex-col gap-3">
                               {session.nextLiveSessionDate && (
-                                <div className="flex items-center gap-2 text-sm text-cyan-400 bg-cyan-500/10 px-3 py-2 rounded-md border border-cyan-500/30">
+                                <div className="flex items-center gap-2 text-sm text-blue-700 bg-blue-50 px-3 py-2 rounded-md border border-blue-200">
                                   <Calendar className="h-4 w-4" />
                                   <span><strong>Next Live Session:</strong> {session.nextLiveSessionDate}</span>
                                 </div>
@@ -228,7 +211,7 @@ const ModuleDetailPage = () => {
                               {session.sessionRecordingUrl && (
                                 <Button 
                                   variant="outline" 
-                                  className="w-fit bg-purple-500/10 border-purple-500/50 text-purple-300 hover:bg-purple-500/20"
+                                  className="w-fit"
                                   onClick={() => window.open(session.sessionRecordingUrl, '_blank')}
                                 >
                                   <Video className="h-4 w-4 mr-2" />
@@ -249,51 +232,48 @@ const ModuleDetailPage = () => {
             {deepDiveSessions.length > 0 && (
               <div>
                 <div className="flex items-center mb-6">
-                  <Badge className="bg-orange-500/20 text-orange-300 text-lg px-4 py-2 border border-orange-500/50 backdrop-blur-sm">
+                  <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
                     Deep Dive Sessions
                   </Badge>
-                  <div className="flex-1 h-px bg-gradient-to-r from-orange-500/50 to-transparent ml-4"></div>
+                  <div className="flex-1 h-px bg-orange-200 ml-4"></div>
                 </div>
                 
                 <div className="space-y-4">
                   {deepDiveSessions.map((session, index) => (
-                    <Card key={session.id} className="hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:-translate-y-2 bg-black/40 backdrop-blur-lg border border-white/10">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-pink-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 blur-xl rounded-lg"></div>
-                      
-                      <CardHeader className="pb-4 relative z-10">
+                    <Card key={session.id} className="hover:shadow-lg transition-all duration-300 border border-gray-200">
+                      <CardHeader className="pb-4">
                         <div className="flex items-start gap-4">
                           <div className="flex flex-col items-center">
-                            <div className={`w-3 h-3 rounded-full shadow-lg ${getStatusColor(session.type)} shadow-orange-500/50`}></div>
+                            <div className={`w-3 h-3 rounded-full shadow-sm ${getStatusColor(session.type)}`}></div>
                             {index < deepDiveSessions.length - 1 && (
-                              <div className="w-px h-16 bg-gradient-to-b from-orange-500/50 to-transparent mt-2"></div>
+                              <div className="w-px h-16 bg-orange-200 mt-2"></div>
                             )}
                           </div>
                           
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
                               {getFormatIcon(session.format)}
-                              <Badge variant="outline" className="text-xs border-orange-500/50 text-orange-300">
+                              <Badge variant="outline" className="text-xs">
                                 {session.format}
                               </Badge>
                             </div>
                             
-                            <CardTitle className="text-lg mb-2 text-orange-300">
+                            <CardTitle className="text-lg mb-2 text-gray-900">
                               {session.title}
                             </CardTitle>
                             
-                            <div className="text-sm text-gray-400 mb-2">
+                            <div className="text-sm text-gray-600 mb-2">
                               <strong>Speakers:</strong> {session.speakers.join(', ')}
                             </div>
                             
-                            <CardDescription className="mb-4 text-gray-300">
+                            <CardDescription className="mb-4 text-gray-700">
                               {session.description}
                             </CardDescription>
 
                             {/* Session Actions */}
                             <div className="flex flex-col gap-3">
                               {session.nextLiveSessionDate && (
-                                <div className="flex items-center gap-2 text-sm text-cyan-400 bg-cyan-500/10 px-3 py-2 rounded-md border border-cyan-500/30">
+                                <div className="flex items-center gap-2 text-sm text-blue-700 bg-blue-50 px-3 py-2 rounded-md border border-blue-200">
                                   <Calendar className="h-4 w-4" />
                                   <span><strong>Next Live Session:</strong> {session.nextLiveSessionDate}</span>
                                 </div>
@@ -302,7 +282,7 @@ const ModuleDetailPage = () => {
                               {session.sessionRecordingUrl && (
                                 <Button 
                                   variant="outline" 
-                                  className="w-fit bg-purple-500/10 border-purple-500/50 text-purple-300 hover:bg-purple-500/20"
+                                  className="w-fit"
                                   onClick={() => window.open(session.sessionRecordingUrl, '_blank')}
                                 >
                                   <Video className="h-4 w-4 mr-2" />
@@ -322,31 +302,30 @@ const ModuleDetailPage = () => {
 
           {/* Self-Learning Resources Section */}
           {selfLearningItems && selfLearningItems.length > 0 && (
-            <Card className="mt-8 bg-black/40 backdrop-blur-lg border border-green-500/30 shadow-2xl shadow-green-500/20">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 rounded-lg"></div>
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-2xl text-green-300 [text-shadow:_0_0_20px_rgb(34_197_94_/_50%)]">Additional Self-Learning Resources</CardTitle>
-                <CardDescription className="text-gray-300">
+            <Card className="mt-8 shadow-lg border border-green-200">
+              <CardHeader>
+                <CardTitle className="text-2xl text-green-700">Additional Self-Learning Resources</CardTitle>
+                <CardDescription className="text-gray-600">
                   Enhance your learning journey with these recommended courses and materials.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent>
                 <div className="space-y-4">
                   {selfLearningItems.map((item, index) => (
-                    <div key={index} className="flex items-center space-x-4 p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+                    <div key={index} className="flex items-center space-x-4 p-4 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors">
                       <Checkbox
                         id={`item-${index}`}
                         checked={item.completed}
                         onCheckedChange={() => toggleSelfLearningItem(index)}
-                        className="border-green-500/50 data-[state=checked]:bg-green-500"
+                        className="border-green-500 data-[state=checked]:bg-green-500"
                       />
                       <div className="flex-1">
                         <label 
                           htmlFor={`item-${index}`}
                           className={`font-medium cursor-pointer transition-colors ${
                             item.completed 
-                              ? 'text-green-400 line-through' 
-                              : 'text-cyan-300 hover:text-cyan-200'
+                              ? 'text-green-600 line-through' 
+                              : 'text-gray-900 hover:text-green-700'
                           }`}
                         >
                           {item.title}
@@ -355,7 +334,7 @@ const ModuleDetailPage = () => {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-purple-300 hover:text-purple-200 hover:bg-purple-500/10"
+                        className="text-green-600 hover:text-green-700 hover:bg-green-100"
                         onClick={() => window.open(item.url, '_blank')}
                       >
                         <ExternalLink className="h-4 w-4 mr-2" />
