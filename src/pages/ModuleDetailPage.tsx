@@ -4,8 +4,9 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Presentation, Users, CheckCircle2, Circle, PlayCircle } from "lucide-react";
+import { Presentation, Users, CheckCircle2, Circle, PlayCircle, Calendar, Video, ExternalLink } from "lucide-react";
 import { modules, Module, Session } from "@/lib/moduleData";
 
 const ModuleDetailPage = () => {
@@ -104,8 +105,8 @@ const ModuleDetailPage = () => {
                             <Circle className="h-5 w-5" />
                           )}
                         </div>
-                        <span className="text-xs text-center text-gray-600 max-w-16 leading-tight">
-                          {session.id}
+                        <span className="text-xs text-center text-gray-600 max-w-20 leading-tight">
+                          {session.title}
                         </span>
                         
                         {/* Connection Line */}
@@ -162,9 +163,30 @@ const ModuleDetailPage = () => {
                               <strong>Speakers:</strong> {session.speakers.join(', ')}
                             </div>
                             
-                            <CardDescription>
+                            <CardDescription className="mb-4">
                               {session.description}
                             </CardDescription>
+
+                            {/* Session Actions */}
+                            <div className="flex flex-col gap-3">
+                              {session.nextLiveSessionDate && (
+                                <div className="flex items-center gap-2 text-sm text-blue-600 bg-blue-50 px-3 py-2 rounded-md">
+                                  <Calendar className="h-4 w-4" />
+                                  <span><strong>Next Live Session:</strong> {session.nextLiveSessionDate}</span>
+                                </div>
+                              )}
+                              
+                              {session.sessionRecordingUrl && (
+                                <Button 
+                                  variant="outline" 
+                                  className="w-fit"
+                                  onClick={() => window.open(session.sessionRecordingUrl, '_blank')}
+                                >
+                                  <Video className="h-4 w-4 mr-2" />
+                                  Watch Recording
+                                </Button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </CardHeader>
@@ -212,9 +234,30 @@ const ModuleDetailPage = () => {
                               <strong>Speakers:</strong> {session.speakers.join(', ')}
                             </div>
                             
-                            <CardDescription>
+                            <CardDescription className="mb-4">
                               {session.description}
                             </CardDescription>
+
+                            {/* Session Actions */}
+                            <div className="flex flex-col gap-3">
+                              {session.nextLiveSessionDate && (
+                                <div className="flex items-center gap-2 text-sm text-blue-600 bg-blue-50 px-3 py-2 rounded-md">
+                                  <Calendar className="h-4 w-4" />
+                                  <span><strong>Next Live Session:</strong> {session.nextLiveSessionDate}</span>
+                                </div>
+                              )}
+                              
+                              {session.sessionRecordingUrl && (
+                                <Button 
+                                  variant="outline" 
+                                  className="w-fit"
+                                  onClick={() => window.open(session.sessionRecordingUrl, '_blank')}
+                                >
+                                  <Video className="h-4 w-4 mr-2" />
+                                  Watch Recording
+                                </Button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </CardHeader>
@@ -224,6 +267,35 @@ const ModuleDetailPage = () => {
               </div>
             )}
           </div>
+
+          {/* Self-Learning Resources Section */}
+          {module.courseraLinks && module.courseraLinks.length > 0 && (
+            <Card className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl text-gray-900">Additional Self-Learning Resources</CardTitle>
+                <CardDescription>
+                  Enhance your learning journey with these recommended courses and materials.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-3">
+                  {module.courseraLinks.map((link, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className="justify-start h-auto p-4 text-left"
+                      onClick={() => window.open(link.url, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-3 flex-shrink-0" />
+                      <span className="text-blue-600 hover:text-blue-800 font-medium">
+                        {link.title}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </div>
       

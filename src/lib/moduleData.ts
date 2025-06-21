@@ -1,4 +1,3 @@
-
 export interface Session {
   id: string;
   title: string;
@@ -6,6 +5,8 @@ export interface Session {
   format: 'Lecture' | 'Seminar' | 'Modulhandbuch' | 'Workshop';
   speakers: string[];
   description: string;
+  nextLiveSessionDate?: string;
+  sessionRecordingUrl?: string;
 }
 
 export interface Module {
@@ -13,6 +14,7 @@ export interface Module {
   title: string;
   description: string;
   sessions: Session[];
+  courseraLinks?: { title: string; url: string; }[];
 }
 
 export const modules: Module[] = [
@@ -20,10 +22,39 @@ export const modules: Module[] = [
     id: '1',
     title: 'Digital Mind',
     description: 'Laying the foundation for a digital-first mindset and collaborative success.',
+    courseraLinks: [
+      { title: 'Coursera: Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn' },
+      { title: 'Coursera: Mindshift', url: 'https://www.coursera.org/learn/mindshift' }
+    ],
     sessions: [
-      { id: '1.E1', title: 'Embracing Change: Cultivating a learner\'s mindset', type: 'Essential', format: 'Lecture', speakers: ['Sven Oevermann', 'Lisa Brenner', 'Miriam Hartling'], description: 'Focuses on Change Readiness, Learning Culture, and Continuous Learning.' },
-      { id: '1.E2', title: 'Beyond borders: Mastering collaboration in an international setting', type: 'Essential', format: 'Lecture', speakers: ['Chris Graves'], description: 'Covers virtual collaboration methods, conflict management, and intercultural competencies.' },
-      { id: '1.D1', title: 'Digital Wellbeing: Keeping sanity in a virtual world', type: 'Deep Dive', format: 'Lecture', speakers: ['Henrik Drewel'], description: 'Discusses stress, resilience, and digital wellbeing.' },
+      { 
+        id: '1.E1', 
+        title: 'Embracing Change: Cultivating a learner\'s mindset', 
+        type: 'Essential', 
+        format: 'Lecture', 
+        speakers: ['Sven Oevermann', 'Lisa Brenner', 'Miriam Hartling'], 
+        description: 'Focuses on Change Readiness, Learning Culture, and Continuous Learning.',
+        nextLiveSessionDate: 'October 15, 2025',
+        sessionRecordingUrl: 'https://example.com/recording/1E1'
+      },
+      { 
+        id: '1.E2', 
+        title: 'Beyond borders: Mastering collaboration in an international setting', 
+        type: 'Essential', 
+        format: 'Lecture', 
+        speakers: ['Chris Graves'], 
+        description: 'Covers virtual collaboration methods, conflict management, and intercultural competencies.',
+        sessionRecordingUrl: 'https://example.com/recording/1E2'
+      },
+      { 
+        id: '1.D1', 
+        title: 'Digital Wellbeing: Keeping sanity in a virtual world', 
+        type: 'Deep Dive', 
+        format: 'Lecture', 
+        speakers: ['Henrik Drewel'], 
+        description: 'Discusses stress, resilience, and digital wellbeing.',
+        nextLiveSessionDate: 'November 3, 2025'
+      },
       { id: '1.D2', title: 'Motivating others for change: Sparking inspiration in times of complexity', type: 'Deep Dive', format: 'Seminar', speakers: ['Heiko Krügel'], description: 'Learn about inspiring change, feedback, and psychological safety.' },
       { id: '1.D3', title: 'From Slide to Story: Elevating digital presentations through Structure and Design', type: 'Deep Dive', format: 'Seminar', speakers: ['Malin Bartsch'], description: 'Master the art of visualization and digital presentation skills.' },
       { id: '1.D4', title: 'From Information to Action: Successful Communication at Arvato and Beyond', type: 'Deep Dive', format: 'Seminar', speakers: ['Lars Grundmeier'], description: 'Covers effective communication, handling information overload, and understanding communication channels at Arvato.' },
@@ -33,9 +64,30 @@ export const modules: Module[] = [
     id: '2',
     title: 'IT Excellence',
     description: 'Harnessing the power of data, AI, and automation to drive efficiency and innovation.',
+    courseraLinks: [
+      { title: 'Coursera: Introduction to Data Science', url: 'https://www.coursera.org/learn/data-science-course' },
+      { title: 'Coursera: Machine Learning for Everyone', url: 'https://www.coursera.org/learn/machine-learning-for-everyone' }
+    ],
     sessions: [
-      { id: '2.E1', title: 'Data-driven mindset: Use the power of data', type: 'Essential', format: 'Lecture', speakers: ['Daniel Böske'], description: 'Learn why a data-driven mindset is important and realize the benefits of data.' },
-      { id: '2.E2', title: 'AI and Arvato: Envisioning a smarter future', type: 'Essential', format: 'Lecture', speakers: ['Dietmar Guhe'], description: 'An introduction to AI and a look behind buzzwords like data, analytics, and generative AI.' },
+      { 
+        id: '2.E1', 
+        title: 'Data-driven mindset: Use the power of data', 
+        type: 'Essential', 
+        format: 'Lecture', 
+        speakers: ['Daniel Böske'], 
+        description: 'Learn why a data-driven mindset is important and realize the benefits of data.',
+        nextLiveSessionDate: 'December 1, 2025',
+        sessionRecordingUrl: 'https://example.com/recording/2E1'
+      },
+      { 
+        id: '2.E2', 
+        title: 'AI and Arvato: Envisioning a smarter future', 
+        type: 'Essential', 
+        format: 'Lecture', 
+        speakers: ['Dietmar Guhe'], 
+        description: 'An introduction to AI and a look behind buzzwords like data, analytics, and generative AI.',
+        sessionRecordingUrl: 'https://example.com/recording/2E2'
+      },
       { id: '2.D1', title: '(Digital) Process Automation - RPA and Power Platform', type: 'Deep Dive', format: 'Seminar', speakers: ['Oliver Stenzel', 'Bernhard Kreft'], description: 'Understand Robotic Process Automation and its benefits with a use case from Arvato.' },
       { id: '2.D2', title: 'Safeguarding in a digital world', type: 'Deep Dive', format: 'Lecture', speakers: ['Marc Hansmann', 'Birgit Wagner'], description: 'Understand the basics of data privacy, information security, and cloud security at Arvato.' },
       { id: '2.D3', title: 'AI in Action: The future of technology', type: 'Deep Dive', format: 'Seminar', speakers: ['Dietmar Guhe'], description: 'Hands-on AI session demonstrating its practical benefits for you.' },
