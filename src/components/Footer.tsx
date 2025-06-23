@@ -12,9 +12,11 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <div className="h-8 w-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">DC</span>
-              </div>
+              <img 
+                src="/src/assets/dcp_logo.png" 
+                alt="Digital Champions Program" 
+                className="h-8 w-8 object-contain mr-3"
+              />
               <span className="text-xl font-bold">Digital Champions Program</span>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">

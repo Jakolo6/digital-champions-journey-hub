@@ -33,9 +33,11 @@ export const Navigation = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <div className="h-8 w-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">DC</span>
-              </div>
+              <img 
+                src="/src/assets/dcp_logo.png" 
+                alt="Digital Champions Program" 
+                className="h-8 w-8 object-contain"
+              />
               <span className="ml-3 text-xl font-bold text-gray-900">Digital Champions</span>
             </Link>
           </div>
