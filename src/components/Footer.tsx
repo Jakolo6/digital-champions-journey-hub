@@ -1,8 +1,8 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, MapPin, Phone, Linkedin, Twitter } from "lucide-react";
+import myLogo from '@/assets/dcp_logo.png'; // Import the logo
 
 export const Footer = () => {
   return (
@@ -13,9 +13,9 @@ export const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/src/assets/dcp_logo.png" 
+                src={myLogo} // Use the imported logo variable
                 alt="Digital Champions Program" 
-                className="h-8 w-8 object-contain mr-3"
+                className="h-8 w-auto mr-3" // Use w-auto for correct aspect ratio
               />
               <span className="text-xl font-bold">Digital Champions Program</span>
             </Link>
