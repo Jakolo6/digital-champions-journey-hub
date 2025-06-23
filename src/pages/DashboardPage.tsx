@@ -2,6 +2,7 @@
 import { Navigation } from "@/components/Navigation";
 import { GamifiedProgress } from "@/components/GamifiedProgress";
 import { ModuleCards } from "@/components/ModuleCards";
+import { CommunitySection } from "@/components/CommunitySection";
 import { Footer } from "@/components/Footer";
 import { useAuth } from '@/context/AuthContext';
 
@@ -29,6 +30,7 @@ export const DashboardPage = () => {
         </div>
       </div>
       <ModuleCards />
+      <CommunitySection />
       <Footer />
     </div>
   );
