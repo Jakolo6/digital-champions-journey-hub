@@ -17,7 +17,6 @@ export const Navigation = () => {
 
   const publicMenuItems = [
     { name: "Learning Journey", icon: BookOpen, href: "/learning-journey" },
-    { name: "About", icon: Users, href: "#about" },
   ];
 
   const menuItems = isAuthenticated ? authenticatedMenuItems : publicMenuItems;
