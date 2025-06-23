@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Menu, X, User, BookOpen, LogOut } from "lucide-react";
 import { useAuth } from '@/context/AuthContext';
+import myLogo from '@/assets/dcp_logo.png';
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +34,9 @@ export const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img 
-                src="/src/assets/dcp_logo.png" 
+                src={myLogo} 
                 alt="Digital Champions Program" 
-                className="h-8 w-8 object-contain"
+                className="h-8 w-auto" // Adjusted for better scaling
               />
               <span className="ml-3 text-xl font-bold text-gray-900">Digital Champions</span>
             </Link>
