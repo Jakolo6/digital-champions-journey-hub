@@ -75,8 +75,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     console.log('Logout');
     setUser(null);
     setIsAuthenticated(false);
-    // Redirect to homepage instead of login
-    window.location.href = '/';
   };
 
   const value = {

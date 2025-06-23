@@ -20,6 +20,7 @@ export const Navigation = () => {
   const handleLogout = () => {
     logout();
     setIsMenuOpen(false);
+    navigate('/');
   };
 
   const handleProfileClick = () => {
