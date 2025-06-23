@@ -12,10 +12,11 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <div className="h-8 w-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">DC</span>
-              </div>
-              <span className="text-xl font-bold">Digital Champions Program</span>
+              <img 
+                src="/logo.png" 
+                alt="Digital Champions Program" 
+                className="h-12 w-auto mr-3 brightness-0 invert"
+              />
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
               Empowering Arvato Supply Chain Solutions employees with cutting-edge digital skills and transformative learning experiences.
@@ -38,7 +39,6 @@ export const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
               <li><Link to="/dashboard" className="hover:text-blue-400 transition-colors">Dashboard</Link></li>
-              <li><Link to="/community" className="hover:text-blue-400 transition-colors">Community</Link></li>
               <li><Link to="/login" className="hover:text-blue-400 transition-colors">Sign In</Link></li>
               <li><Link to="/register" className="hover:text-blue-400 transition-colors">Sign Up</Link></li>
             </ul>

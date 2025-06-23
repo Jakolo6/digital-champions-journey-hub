@@ -41,9 +41,11 @@ export const RegisterPage = () => {
               <ArrowLeft className="h-4 w-4 mr-1" />
               Back to Home
             </Link>
-            <div className="h-12 w-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">DC</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Digital Champions Program" 
+              className="h-12 w-auto"
+            />
           </div>
           <CardTitle className="text-2xl font-bold text-gray-900">Join Digital Champions</CardTitle>
           <CardDescription>
