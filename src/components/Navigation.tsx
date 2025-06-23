@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, User, BookOpen, Users, LogOut } from "lucide-react";
+import { Menu, X, User, BookOpen, LogOut } from "lucide-react";
 import { useAuth } from '@/context/AuthContext';
 
 export const Navigation = () => {
@@ -11,15 +11,11 @@ export const Navigation = () => {
   const { isAuthenticated, user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const authenticatedMenuItems = [
-    { name: "Community", icon: Users, href: "/community" },
-  ];
-
   const publicMenuItems = [
     { name: "Learning Journey", icon: BookOpen, href: "/learning-journey" },
   ];
 
-  const menuItems = isAuthenticated ? authenticatedMenuItems : publicMenuItems;
+  const menuItems = isAuthenticated ? [] : publicMenuItems;
 
   const handleLogout = () => {
     logout();
