@@ -1,23 +1,23 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Compass, Badge, Library } from "lucide-react";
+import { Library, Users, Rocket } from "lucide-react";
 
 export const AdvantagesSection = () => {
   const advantages = [
     {
-      icon: Compass,
-      title: "Structured Learning Paths",
-      description: "We've evolved beyond a simple course catalog. Version 2.0 introduces a clear, guided journey through structured modules, helping you build skills logically and see your path forward."
-    },
-    {
-      icon: Badge,
-      title: "Gamified & Rewarding",
-      description: "Your progress now matters more than ever. Earn credits for every session, unlock prestigious badges for your achievements, and track your entire journey on your personal dashboard."
-    },
-    {
       icon: Library,
-      title: "All-in-One Module Hubs",
-      description: "Say goodbye to searching for resources. Each module now has a dedicated hub page with everything you need: session details, recordings, downloadable materials, and community links."
+      title: "Your Central Learning Hub",
+      description: "No more searching for scattered materials. All resources for your entire learning journey, from session details and recordings to downloadable materials, can now be found in one single, integrated platform."
+    },
+    {
+      icon: Users,
+      title: "A Thriving Community Network",
+      description: "Learning is better together. We've integrated direct links to discussion forums in Microsoft Teams, making it easier than ever to connect with peers, share insights, and foster a strong community of exchange (Austausch)."
+    },
+    {
+      icon: Rocket,
+      title: "Future-Oriented & Hands-On",
+      description: "The curriculum is now more forward-thinking (zukunftsgewandter) and more practical (praxisnäher). Dive into topics like AI and automation, and learn through real-world case studies you can apply directly to your work."
     }
   ];
 
