@@ -1,23 +1,23 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wrench, Rocket, UserCheck } from "lucide-react";
+import { compass, badge, library } from "lucide-react";
 
 export const AdvantagesSection = () => {
   const advantages = [
     {
-      icon: Wrench,
-      title: "Practical & Hands-On",
-      description: "Learn through real-world case studies from Arvato and apply your new skills directly to your daily work."
+      icon: compass,
+      title: "Structured Learning Paths",
+      description: "We've evolved beyond a simple course catalog. Version 2.0 introduces a clear, guided journey through structured modules, helping you build skills logically and see your path forward."
     },
     {
-      icon: Rocket,
-      title: "Future-Oriented",
-      description: "Stay ahead of the curve with deep dives into AI, warehouse automation, robotics, and the future of logistics."
+      icon: badge,
+      title: "Gamified & Rewarding",
+      description: "Your progress now matters more than ever. Earn credits for every session, unlock prestigious badges for your achievements, and track your entire journey on your personal dashboard."
     },
     {
-      icon: UserCheck,
-      title: "Personalized & Empowering",
-      description: "Follow a learning path tailored to your personal goals and earn credits and badges to celebrate your unique achievements."
+      icon: library,
+      title: "All-in-One Module Hubs",
+      description: "Say goodbye to searching for resources. Each module now has a dedicated hub page with everything you need: session details, recordings, downloadable materials, and community links."
     }
   ];
 
@@ -26,7 +26,7 @@ export const AdvantagesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Become a Digital Champion?
+            Digital Champions 2.0: What's New in Your Journey
           </h2>
         </div>
         
