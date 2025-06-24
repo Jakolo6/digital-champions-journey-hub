@@ -8,13 +8,6 @@ import { Link } from "react-router-dom";
 import { modules } from "@/lib/moduleData";
 
 const LearningJourneyPage = () => {
-  const moduleImages = [
-    "/image_855184.png", // Digital Mind
-    "/image_855187.png", // IT Excellence
-    "/image_85519f.png", // Digital Acceleration
-    "/image_8551a2.png"  // Future Warehouse
-  ];
-
   const moduleIcons = [BrainCircuit, DatabaseZap, Rocket, Factory];
 
   return (
@@ -61,14 +54,30 @@ const LearningJourneyPage = () => {
             {modules.map((module, index) => {
               const IconComponent = moduleIcons[index];
               return (
-                <div key={module.id} className={`relative flex items-center ${
+                <div key={module.id} className={`relative flex items-center group ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}>
-                  {/* Glowing Station Circle */}
+                  {/* Interactive Image Milestone Marker */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden lg:block">
-                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center font-bold text-white shadow-2xl border-4 border-white/20 backdrop-blur-sm">
-                      <span className="text-lg">{String(index + 1).padStart(2, '0')}</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full animate-pulse blur-md opacity-60"></div>
+                    <div className="relative w-20 h-20 transition-all duration-300 group-hover:scale-110">
+                      {/* Glowing border effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse blur-md"></div>
+                      
+                      {/* Image container */}
+                      <div className="relative w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full p-1 shadow-2xl border-4 border-white/20 backdrop-blur-sm">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-black/20">
+                          <img 
+                            src={module.image} 
+                            alt={module.title}
+                            className="w-full h-full object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                      </div>
+                      
+                      {/* Module number overlay */}
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold border-2 border-white/30">
+                        {index + 1}
+                      </div>
                     </div>
                   </div>
                   
@@ -77,10 +86,10 @@ const LearningJourneyPage = () => {
                     index % 2 === 0 ? 'lg:pr-20' : 'lg:pl-20'
                   }`}>
                     <Card className="group hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 transform hover:-translate-y-3 relative overflow-hidden border border-white/10 bg-black/40 backdrop-blur-lg">
-                      {/* Background Image */}
+                      {/* Background Image with enhanced opacity on hover */}
                       <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                        style={{ backgroundImage: `url(${moduleImages[index]})` }}
+                        className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                        style={{ backgroundImage: `url(${module.image})` }}
                       ></div>
                       
                       {/* Glassmorphism Overlay */}

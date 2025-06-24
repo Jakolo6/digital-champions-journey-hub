@@ -1,3 +1,8 @@
+import futureExplorerImg from '@/assets/Future_Explorer.png';
+import digitalEnablerImg from '@/assets/Digital_AI_Enabler.png';
+import innovationPilotImg from '@/assets/Innovation_Pilot.png';
+import logisticsLeaderImg from '@/assets/Logistic_Leader.png';
+
 export interface Session {
   id: string;
   title: string;
@@ -21,6 +26,7 @@ export interface Module {
   id: string;
   title: string;
   description: string;
+  image: string;
   sessions: Session[];
   selfLearningItems?: SelfLearningItem[];
 }
@@ -30,6 +36,7 @@ export const modules: Module[] = [
     id: '1',
     title: 'Digital Mind',
     description: 'Laying the foundation for a digital-first mindset and collaborative success.',
+    image: futureExplorerImg,
     selfLearningItems: [
       { title: 'Coursera: Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn', completed: false },
       { title: 'Coursera: Mindshift', url: 'https://www.coursera.org/learn/mindshift', completed: true }
@@ -106,6 +113,7 @@ export const modules: Module[] = [
     id: '2',
     title: 'IT Excellence',
     description: 'Harnessing the power of data, AI, and automation to drive efficiency and innovation.',
+    image: digitalEnablerImg,
     selfLearningItems: [
       { title: 'Coursera: Introduction to Data Science', url: 'https://www.coursera.org/learn/data-science-course', completed: true },
       { title: 'Coursera: Machine Learning for Everyone', url: 'https://www.coursera.org/learn/machine-learning-for-everyone', completed: false }
@@ -187,6 +195,7 @@ export const modules: Module[] = [
     id: '3',
     title: 'Digital Acceleration',
     description: 'From customer needs to tangible solutions, master the art of digital project execution.',
+    image: innovationPilotImg,
     selfLearningItems: [
       { title: 'Design Thinking Fundamentals', url: 'https://example.com/design-thinking', completed: false },
       { title: 'Agile Project Management', url: 'https://example.com/agile-pm', completed: false }
@@ -252,6 +261,7 @@ export const modules: Module[] = [
     id: '4',
     title: 'Future Warehouse',
     description: 'Exploring the technology, automation, and sustainable practices shaping the future of logistics.',
+    image: logisticsLeaderImg,
     selfLearningItems: [
       { title: 'Robotics in Logistics', url: 'https://example.com/robotics-logistics', completed: false },
       { title: 'Sustainable Supply Chain', url: 'https://example.com/sustainable-supply', completed: false }
