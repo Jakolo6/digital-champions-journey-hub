@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Library, Users, Rocket } from "lucide-react";
 
@@ -12,12 +11,12 @@ export const AdvantagesSection = () => {
     {
       icon: Users,
       title: "A Thriving Community Network",
-      description: "Learning is better together. We've integrated direct links to discussion forums in Microsoft Teams, making it easier than ever to connect with peers, share insights, and foster a strong community of exchange (Austausch)."
+      description: "Learning is better together. We've integrated direct links to discussion forums in Microsoft Teams, making it easier than ever to connect with peers, share insights, and foster a strong community of exchange."
     },
     {
       icon: Rocket,
       title: "Future-Oriented & Hands-On",
-      description: "The curriculum is now more forward-thinking (zukunftsgewandter) and more practical (praxisnäher). Dive into topics like AI and automation, and learn through real-world case studies you can apply directly to your work."
+      description: "The curriculum is now more forward-thinking and more practical. Dive into topics like AI and automation, and learn through real-world case studies you can apply directly to your work."
     }
   ];
 
