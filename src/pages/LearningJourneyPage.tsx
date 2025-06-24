@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -59,12 +58,12 @@ const LearningJourneyPage = () => {
                 }`}>
                   {/* Interactive Image Milestone Marker */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden lg:block">
-                    <div className="relative w-20 h-20 transition-all duration-300 group-hover:scale-110">
+                    <div className="relative w-28 h-28 transition-all duration-300 group-hover:scale-110">
                       {/* Glowing border effect on hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse blur-md"></div>
                       
                       {/* Image container */}
-                      <div className="relative w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full p-1 shadow-2xl border-4 border-white/20 backdrop-blur-sm">
+                      <div className="relative w-28 h-28 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full p-1 shadow-2xl border-4 border-white/20 backdrop-blur-sm">
                         <div className="w-full h-full rounded-full overflow-hidden bg-black/20">
                           <img 
                             src={module.image} 
