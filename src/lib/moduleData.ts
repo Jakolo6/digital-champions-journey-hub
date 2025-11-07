@@ -34,8 +34,8 @@ export interface Module {
 export const modules: Module[] = [
   {
     id: '1',
-    title: 'FUTURE EXPLORER',
-    description: 'Discover the future: An introduction to digital transformation and the essential soft skills required to prepare for and lead through change.',
+    title: 'LEADERSHIP LAB',
+    description: 'Discover the future: An introduction to AI leadership and the essential skills required to prepare for and lead through AI transformation.',
     image: futureExplorerImg,
     selfLearningItems: [
       { title: 'Coursera: Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn', completed: false },
@@ -111,8 +111,8 @@ export const modules: Module[] = [
   },
   {
     id: '2',
-    title: 'DIGITAL & AI ENABLER',
-    description: 'Mastering technology: Learn to integrate modern technologies, from data analytics to AI, to drive meaningful change and scale innovative solutions.',
+    title: 'AI LEARNING PATH',
+    description: 'Mastering technology: Learn to integrate modern AI technologies, from data analytics to generative AI, to drive meaningful change and scale innovative solutions.',
     image: digitalEnablerImg,
     selfLearningItems: [
       { title: 'Coursera: Introduction to Data Science', url: 'https://www.coursera.org/learn/data-science-course', completed: true },
@@ -193,8 +193,8 @@ export const modules: Module[] = [
   },
   {
     id: '3',
-    title: 'INNOVATION PILOT',
-    description: 'Putting visions into action: Go beyond theory with agile methods and proven innovation approaches to actively shape the course of digital transformation.',
+    title: 'EXPERIENCE SESSION',
+    description: 'Putting visions into action: Go beyond theory with agile methods and proven innovation approaches to actively shape the course of AI transformation.',
     image: innovationPilotImg,
     selfLearningItems: [
       { title: 'Design Thinking Fundamentals', url: 'https://example.com/design-thinking', completed: false },
@@ -259,8 +259,8 @@ export const modules: Module[] = [
   },
   {
     id: '4',
-    title: 'LOGISTICS LEADER',
-    description: 'Revolutionizing digital logistics: Apply cutting-edge technologies to optimize complex processes and solidify your position as a pioneer in the industry\'s future.',
+    title: 'AI COMMUNITY',
+    description: 'Building connections: Join a thriving community of AI leaders, share insights, collaborate on challenges, and drive collective innovation in AI adoption.',
     image: logisticsLeaderImg,
     selfLearningItems: [
       { title: 'Robotics in Logistics', url: 'https://example.com/robotics-logistics', completed: false },
