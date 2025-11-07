@@ -38,7 +38,7 @@ export const Navigation = () => {
                 alt="Digital Champions Program" 
                 className="h-8 w-auto" // Adjusted for better scaling
               />
-              <span className="ml-3 text-xl font-bold text-gray-900">Digital Champions</span>
+              <span className="ml-3 text-xl font-bold text-gray-900">AI Leadership Platform</span>
             </Link>
           </div>
 
@@ -48,7 +48,7 @@ export const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 hover:bg-blue-50 rounded-lg"
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-petrol transition-colors duration-200 hover:bg-brand-yellow/10 rounded-lg"
               >
                 <item.icon className="h-4 w-4 mr-2" />
                 {item.name}
@@ -57,7 +57,7 @@ export const Navigation = () => {
             
             {isAuthenticated ? (
               <div className="flex items-center space-x-3">
-                <Badge variant="secondary" className="bg-orange-100 text-orange-800">
+                <Badge variant="secondary" className="bg-brand-yellow/30 text-brand-petrol">
                   {user?.credits || 0} Credits
                 </Badge>
                 <Button 
@@ -71,7 +71,7 @@ export const Navigation = () => {
                 </Button>
                 <Button 
                   size="sm" 
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-brand-petrol hover:bg-brand-petrol-dark text-white"
                   onClick={handleProfileClick}
                 >
                   <User className="h-4 w-4 mr-2" />
@@ -86,7 +86,7 @@ export const Navigation = () => {
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  <Button size="sm" className="bg-brand-petrol hover:bg-brand-petrol-dark text-white">
                     Sign Up
                   </Button>
                 </Link>
@@ -114,7 +114,7 @@ export const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                  className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-petrol hover:bg-brand-yellow/10 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <item.icon className="h-5 w-5 mr-3" />
@@ -125,7 +125,7 @@ export const Navigation = () => {
               {isAuthenticated ? (
                 <div className="space-y-2 px-3 py-2">
                   <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="bg-orange-100 text-orange-800">
+                    <Badge variant="secondary" className="bg-brand-yellow/30 text-brand-petrol">
                       {user?.credits || 0} Credits
                     </Badge>
                   </div>
@@ -147,7 +147,7 @@ export const Navigation = () => {
                     </Button>
                   </Link>
                   <Link to="/register" onClick={() => setIsMenuOpen(false)}>
-                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
+                    <Button size="sm" className="w-full bg-brand-petrol hover:bg-brand-petrol-dark text-white">
                       Sign Up
                     </Button>
                   </Link>

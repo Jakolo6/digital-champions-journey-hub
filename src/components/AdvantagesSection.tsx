@@ -1,22 +1,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Library, Users, Rocket } from "lucide-react";
+import { Brain, Users, Lightbulb } from "lucide-react";
 
 export const AdvantagesSection = () => {
   const advantages = [
     {
-      icon: Library,
-      title: "Your Central Learning Hub",
-      description: "No more searching for scattered materials. All resources for your entire learning journey, from session details and recordings to downloadable materials, can now be found in one single, integrated platform."
+      icon: Brain,
+      title: "AI-Powered Learning",
+      description: "Access comprehensive AI training designed for leaders. From fundamentals to advanced applications, build the knowledge you need to lead in the AI era with confidence and expertise."
     },
     {
       icon: Users,
-      title: "A Thriving Community Network",
-      description: "Learning is better together. We've integrated direct links to discussion forums in Microsoft Teams, making it easier than ever to connect with peers, share insights, and foster a strong community of exchange."
+      title: "Collaborative Leadership",
+      description: "Connect with fellow leaders navigating AI transformation. Share experiences, discuss challenges, and build a network of AI-enabled leaders driving innovation across industries."
     },
     {
-      icon: Rocket,
-      title: "Future-Oriented & Hands-On",
-      description: "The curriculum is now more forward-thinking and more practical. Dive into topics like AI and automation, and learn through real-world case studies you can apply directly to your work."
+      icon: Lightbulb,
+      title: "Practical Innovation",
+      description: "Apply AI concepts to real business scenarios. Learn through case studies, hands-on exercises, and strategic frameworks that translate directly into actionable leadership decisions."
     }
   ];
 
@@ -25,7 +25,7 @@ export const AdvantagesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Digital Champions 2.0: What's New in Your Journey
+            Why AI Leadership Matters
           </h2>
         </div>
         
@@ -33,8 +33,8 @@ export const AdvantagesSection = () => {
           {advantages.map((advantage, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <advantage.icon className="h-8 w-8 text-blue-600" />
+                <div className="mx-auto mb-4 w-16 h-16 bg-brand-yellow/20 rounded-full flex items-center justify-center">
+                  <advantage.icon className="h-8 w-8 text-brand-petrol" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-gray-900">
                   {advantage.title}

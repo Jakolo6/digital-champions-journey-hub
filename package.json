@@ -1,8 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "ai-leadership-learning-platform",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "A comprehensive learning platform designed to empower leaders with AI capabilities",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

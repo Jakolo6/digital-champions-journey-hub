@@ -63,11 +63,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Arvato brand colors
-				arvato: {
-					blue: '#0055A4',
-					orange: '#FFAA5C',
-					green: '#A8E6CF'
+				// Brand colors - Yellow and Petrol theme
+				brand: {
+					yellow: {
+						DEFAULT: '#FBB809',
+						light: '#FEDF33',
+						dark: '#EE960D'
+					},
+					petrol: {
+						DEFAULT: '#006680',
+						light: '#0088AA',
+						dark: '#004D66'
+					},
+					orange: {
+						DEFAULT: '#E17A10',
+						light: '#EE960D',
+						dark: '#D87301'
+					}
 				}
 			},
 			borderRadius: {
