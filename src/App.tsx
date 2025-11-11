@@ -14,6 +14,7 @@ import CommunityPage from "./pages/CommunityPage";
 import ModuleDetailPage from "./pages/ModuleDetailPage";
 import ModulesJourneyPage from "./pages/ModulesJourneyPage";
 import LearningJourneyPage from "./pages/LearningJourneyPage";
+import LearningFormatsPage from "./pages/LearningFormatsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/learning-journey" element={<LearningJourneyPage />} />
+            <Route path="/learning-formats" element={<LearningFormatsPage />} />
             
             {/* Protected Routes */}
             <Route path="/dashboard" element={

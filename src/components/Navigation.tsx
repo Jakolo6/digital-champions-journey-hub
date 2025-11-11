@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, User, BookOpen, LogOut } from "lucide-react";
+import { Menu, X, User, BookOpen, LogOut, Layers } from "lucide-react";
 import { useAuth } from '@/context/AuthContext';
 import myLogo from '@/assets/dcp_logo.png';
 
@@ -13,6 +13,7 @@ export const Navigation = () => {
 
   const publicMenuItems = [
     { name: "Learning Journey", icon: BookOpen, href: "/learning-journey" },
+    { name: "Learning Formats", icon: Layers, href: "/learning-formats" },
   ];
 
   const menuItems = isAuthenticated ? [] : publicMenuItems;

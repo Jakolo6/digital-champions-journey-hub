@@ -219,7 +219,13 @@ const ModuleDetailPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-navy mb-4">Learning Formats</h2>
-            <p className="text-lg text-gray-600">Four distinct approaches to AI leadership development</p>
+            <p className="text-lg text-gray-600 mb-4">Four distinct approaches to AI leadership development</p>
+            <Button 
+              onClick={() => window.location.href = '/learning-formats'}
+              className="bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-semibold"
+            >
+              View All Format Details & Intensity Levels
+            </Button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
