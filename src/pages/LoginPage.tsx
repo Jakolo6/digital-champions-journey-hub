@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,11 +8,37 @@ import { ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
 export const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // Generate random credentials
+  const randomEmail = `leader${Math.floor(Math.random() * 1000)}@commerzbank.com`;
+  const randomPassword = `CoBa${Math.random().toString(36).substring(2, 10)}!`;
+  
+  const [email, setEmail] = useState(randomEmail);
+  const [password, setPassword] = useState(randomPassword);
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+
+  // Auto-submit on page load
+  useEffect(() => {
+    const autoLogin = async () => {
+      setIsLoading(true);
+      
+      try {
+        await login(email, password);
+        navigate('/dashboard');
+      } catch (error) {
+        console.error('Auto-login failed:', error);
+        setIsLoading(false);
+      }
+    };
+
+    // Delay slightly to show the form briefly
+    const timer = setTimeout(() => {
+      autoLogin();
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
