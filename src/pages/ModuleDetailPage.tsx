@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Checkbox } from "@/components/ui/checkbox";
-import { BrainCircuit, DatabaseZap, Rocket, Factory, CheckCircle2, Circle, PlayCircle, Calendar, Video, ExternalLink, Download, MessageSquare, Lock, BookOpen } from "lucide-react";
+import { BrainCircuit, DatabaseZap, Rocket, Factory, CheckCircle2, Circle, PlayCircle, Calendar, Video, ExternalLink, Download, MessageSquare, Lock, BookOpen, Users, UserCheck, GraduationCap, Network } from "lucide-react";
 import { modules, Module, Session, SelfLearningItem } from "@/lib/moduleData";
 
 const ModuleDetailPage = () => {
@@ -80,21 +80,73 @@ const ModuleDetailPage = () => {
     }
   };
 
+  // Define the 4 learning formats with sample content
+  const learningFormats = [
+    {
+      id: 'one-to-many',
+      title: 'One to Many (AI Inspiration)',
+      icon: Users,
+      color: 'from-brand-navy to-brand-navy-dark',
+      description: 'Keynotes, Impulse Talks, and Bank Success Stories',
+      items: [
+        { title: 'Keynote: AI Strategy in Banking', description: 'Executive insights on AI transformation roadmap', duration: '45 min' },
+        { title: 'Impulse Talk: Data-Driven Decision Making', description: 'Real-world examples from leading banks', duration: '30 min' },
+        { title: 'Success Story: AI in Risk Management', description: 'Case study from Commerzbank implementation', duration: '25 min' }
+      ]
+    },
+    {
+      id: 'one-to-few',
+      title: 'One to Few (AI Experience)',
+      icon: UserCheck,
+      color: 'from-brand-gold to-brand-gold-dark',
+      description: 'Workshops, Leadership Labs, and Roundtables',
+      items: [
+        { title: 'Workshop: Data-driven Leadership', description: 'Hands-on session for strategic AI adoption', duration: '2 hours' },
+        { title: 'Panel: Ethik in der AI-Strategie', description: 'Expert discussion on responsible AI governance', duration: '90 min' },
+        { title: 'Leadership Lab: Führen im Zeitalter von AI', description: 'Interactive leadership development session', duration: '3 hours' }
+      ]
+    },
+    {
+      id: 'e-learning',
+      title: 'E-Learning',
+      icon: GraduationCap,
+      color: 'from-brand-turquoise to-brand-turquoise-dark',
+      description: 'Self-paced Learning Paths',
+      items: [
+        { title: 'AI Basics for Leaders', description: 'Foundation course on AI technologies and applications', duration: '4 hours' },
+        { title: 'Data Literacy Essentials', description: 'Understanding data governance and analytics', duration: '3 hours' },
+        { title: 'Responsible AI Implementation', description: 'Ethics, compliance, and risk management', duration: '2.5 hours' }
+      ]
+    },
+    {
+      id: 'community',
+      title: 'Community',
+      icon: Network,
+      color: 'from-teal-600 to-teal-800',
+      description: 'Exchange Spaces, Leadership Circles, Peer Discussions',
+      items: [
+        { title: 'AI Leadership Circle', description: 'Monthly peer exchange for senior executives', duration: 'Ongoing' },
+        { title: 'Innovation Forum', description: 'Collaborative space for AI project discussions', duration: 'Ongoing' },
+        { title: 'Expert Q&A Sessions', description: 'Direct access to AI specialists and consultants', duration: 'Weekly' }
+      ]
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Gamified Progress Header */}
-      <div className="py-8 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200">
+      {/* Module Header with Commerzbank Branding */}
+      <div className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy border-b-4 border-brand-gold">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-full flex items-center justify-center shadow-lg">
                 <IconComponent className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">{module.title}</h1>
-                <p className="text-gray-600">{module.description}</p>
+                <h1 className="text-3xl font-bold text-white">{module.title}</h1>
+                <p className="text-brand-turquoise-light">{module.description}</p>
               </div>
             </div>
           </div>
@@ -102,7 +154,7 @@ const ModuleDetailPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Large Overall Progress Circle */}
             <div className="md:col-span-2">
-              <Card className="p-6">
+              <Card className="p-6 bg-white/10 backdrop-blur border-brand-gold/30">
                 <div className="flex items-center gap-6">
                   <div className="relative w-24 h-24">
                     <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
@@ -110,7 +162,7 @@ const ModuleDetailPage = () => {
                         cx="50"
                         cy="50"
                         r="40"
-                        stroke="#e5e7eb"
+                        stroke="rgba(255,255,255,0.2)"
                         strokeWidth="8"
                         fill="none"
                       />
@@ -118,7 +170,7 @@ const ModuleDetailPage = () => {
                         cx="50"
                         cy="50"
                         r="40"
-                        stroke="#3b82f6"
+                        stroke="#C8A73F"
                         strokeWidth="8"
                         fill="none"
                         strokeDasharray={`${progressPercentage * 2.51} 251`}
@@ -126,12 +178,12 @@ const ModuleDetailPage = () => {
                       />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xl font-bold text-gray-900">{Math.round(progressPercentage)}%</span>
+                      <span className="text-xl font-bold text-white">{Math.round(progressPercentage)}%</span>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Overall Module Progress</h3>
-                    <p className="text-gray-600">Keep up the great work!</p>
+                    <h3 className="text-lg font-semibold text-white">Overall Module Progress</h3>
+                    <p className="text-brand-turquoise-light">Keep up the great work!</p>
                   </div>
                 </div>
               </Card>
@@ -139,32 +191,83 @@ const ModuleDetailPage = () => {
             
             {/* Sessions Completed */}
             <div>
-              <Card className="p-6 text-center">
+              <Card className="p-6 text-center bg-white/10 backdrop-blur border-brand-gold/30">
                 <div className="flex items-center justify-center mb-2">
-                  <PlayCircle className="h-8 w-8 text-blue-600" />
+                  <PlayCircle className="h-8 w-8 text-brand-gold" />
                 </div>
-                <div className="text-2xl font-bold text-gray-900">{completedSessions} / {totalSessions}</div>
-                <div className="text-sm text-gray-600">Sessions Completed</div>
+                <div className="text-2xl font-bold text-white">{completedSessions} / {totalSessions}</div>
+                <div className="text-sm text-brand-turquoise-light">Sessions Completed</div>
               </Card>
             </div>
             
             {/* Self-Learning Completed */}
             <div>
-              <Card className="p-6 text-center">
+              <Card className="p-6 text-center bg-white/10 backdrop-blur border-brand-gold/30">
                 <div className="flex items-center justify-center mb-2">
-                  <BookOpen className="h-8 w-8 text-green-600" />
+                  <BookOpen className="h-8 w-8 text-brand-turquoise" />
                 </div>
-                <div className="text-2xl font-bold text-gray-900">{completedSelfLearning} / {totalSelfLearning}</div>
-                <div className="text-sm text-gray-600">Self-Learning Completed</div>
+                <div className="text-2xl font-bold text-white">{completedSelfLearning} / {totalSelfLearning}</div>
+                <div className="text-sm text-brand-turquoise-light">Self-Learning Completed</div>
               </Card>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Two Column Layout */}
-      <div className="py-8 px-4 sm:px-6 lg:px-8">
+      {/* Learning Formats Section */}
+      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-brand-turquoise/5 to-white">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-navy mb-4">Learning Formats</h2>
+            <p className="text-lg text-gray-600">Four distinct approaches to AI leadership development</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {learningFormats.map((format) => {
+              const FormatIcon = format.icon;
+              return (
+                <Card key={format.id} className="overflow-hidden border-2 hover:border-brand-gold transition-all hover:shadow-xl">
+                  {/* Format Header */}
+                  <div className={`h-3 bg-gradient-to-r ${format.color}`}></div>
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${format.color} flex items-center justify-center`}>
+                        <FormatIcon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl text-brand-navy">{format.title}</CardTitle>
+                        <CardDescription className="text-sm">{format.description}</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {format.items.map((item, idx) => (
+                        <div key={idx} className="p-4 bg-gray-50 rounded-lg hover:bg-brand-turquoise/10 transition-colors border border-gray-200">
+                          <div className="flex items-start justify-between mb-2">
+                            <h4 className="font-semibold text-brand-navy">{item.title}</h4>
+                            <Badge variant="outline" className="text-xs">{item.duration}</Badge>
+                          </div>
+                          <p className="text-sm text-gray-600">{item.description}</p>
+                          <Button variant="ghost" size="sm" className="mt-2 text-brand-navy hover:text-brand-gold">
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            Learn More
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Original Sessions Layout (kept for backward compatibility) */}
+      <div className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl font-bold text-brand-navy mb-6">Module Sessions</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* Left Column - Interactive Session Timeline */}

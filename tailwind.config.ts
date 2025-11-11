@@ -63,22 +63,38 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Brand colors - Yellow and Petrol theme
+				// Brand colors - Commerzbank Corporate Design
 				brand: {
+					navy: {
+						DEFAULT: '#0E2A47',
+						light: '#1A3A5A',
+						dark: '#081A2F'
+					},
+					gold: {
+						DEFAULT: '#C8A73F',
+						light: '#D4B85F',
+						dark: '#B0922F'
+					},
+					turquoise: {
+						DEFAULT: '#A9D0C3',
+						light: '#C0DDD4',
+						dark: '#8FC0B0'
+					},
+					// Legacy colors for backward compatibility
 					yellow: {
-						DEFAULT: '#FBB809',
-						light: '#FEDF33',
-						dark: '#EE960D'
+						DEFAULT: '#C8A73F',
+						light: '#D4B85F',
+						dark: '#B0922F'
 					},
 					petrol: {
-						DEFAULT: '#006680',
-						light: '#0088AA',
-						dark: '#004D66'
+						DEFAULT: '#0E2A47',
+						light: '#1A3A5A',
+						dark: '#081A2F'
 					},
 					orange: {
-						DEFAULT: '#E17A10',
-						light: '#EE960D',
-						dark: '#D87301'
+						DEFAULT: '#C8A73F',
+						light: '#D4B85F',
+						dark: '#B0922F'
 					}
 				}
 			},
